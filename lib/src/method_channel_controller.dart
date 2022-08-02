@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/services.dart';
 import 'package:stetho_a1/src/inspector_request.dart';
 import 'package:stetho_a1/src/inspector_response.dart';
