@@ -74,7 +74,6 @@ public class StethoA1Plugin implements FlutterPlugin, MethodCallHandler {
 //    } else {
 //      result.notImplemented();
 //    }
-    Log.d("this--------------method,",call.method);
     switch (call.method) {
       case "initialize":
         Stetho.initialize(initializer);
