@@ -22,7 +22,6 @@ class Stetho {
     if (Platform.isAndroid) {
       WidgetsFlutterBinding.ensureInitialized();
       HttpOverrides.global = StethoHttpOverrides();
-
       return MethodChannelController.initialize();
     }
   }
