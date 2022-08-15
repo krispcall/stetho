@@ -9,7 +9,7 @@ import 'package:stetho_a1/src/method_channel_controller.dart';
 /// Create a response transformer that can intercept and pipe the http response
 /// data to the Method channel
 StreamTransformer<List<int>, List<int>> createResponseTransformer(String id) {
-  return new StreamTransformer.fromHandlers(handleData: (data, sink) {
+  return StreamTransformer.fromHandlers(handleData: (data, sink) {
     sink.add(data);
     MethodChannelController.onDataReceived({"data": data, "id": id});
   }, handleError: (error, stacktrace, sink) {
