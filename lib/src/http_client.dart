@@ -6,7 +6,6 @@ import 'package:stetho_a1/src/inspector_request.dart';
 import 'package:stetho_a1/src/method_channel_controller.dart';
 import 'package:stetho_a1/src/utils.dart';
 
-
 class StethoHttpClient implements HttpClient {
   final HttpClient client;
 
@@ -68,7 +67,7 @@ class StethoHttpClient implements HttpClient {
   }
 
   @override
-  void close({bool force: false}) {
+  void close({bool force = false}) {
     client.close();
   }
 
@@ -167,8 +166,18 @@ class StethoHttpClient implements HttpClient {
   }
 
   StethoHttpClientRequest _wrapResponse(HttpClientRequest request) {
-    final id = new Uuid().generateV4();
+    final id = Uuid().generateV4();
 
-    return new StethoHttpClientRequest(request, id);
+    return StethoHttpClientRequest(request, id);
+  }
+
+  @override
+  set connectionFactory(Future<ConnectionTask<Socket>> Function(Uri url, String? proxyHost, int? proxyPort)? f) {
+    // TODO: implement connectionFactory
+  }
+
+  @override
+  set keyLog(Function(String line)? callback) {
+    // TODO: implement keyLog
   }
 }
