@@ -8,7 +8,7 @@ import 'package:stetho_a1/src/utils.dart';
 
 
 class StethoHttpClient implements HttpClient {
-  late HttpClient client;
+  final HttpClient client;
 
   StethoHttpClient(this.client);
 
